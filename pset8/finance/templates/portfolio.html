@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% block main %}
+<main class="container p-5">
+
+    <table class="table table-striped left-aligned">
+
+        <thead>
+            <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>TOTAL</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td class="thick">{{TOTAL}}</td>
+            </tr>
+        </tfoot>
+
+        <tbody>
+                <tr>{% for row in rows %}
+                        {% if  not row["Shares"] ==0 %}
+                            {% for row in row.values()%}
+                                <td>{{row}}</td>
+                            {% endfor %}
+                        {% endif %}
+                </tr>
+                    {% endfor %}
+
+            <tr>
+                <td colspan="4">CASH</td>
+                <td>{{CASH}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+{% endblock %}

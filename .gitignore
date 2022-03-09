@@ -1,0 +1,6 @@
+project/
+pset1/credit/
+pset4/filter/less/images/*
+pset4/filter/more/images/*
+pset7/movies/movies.db
+__pycache__
